@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro de Clientes</title>
+
+	<link rel="stylesheet" th:href="@{/styles/register.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<header class="page-header">Header</header>
+	<div id="app">
+		<main>
+			<div class="main-container">
+				<div class="back">
+					<img th:src="@{/assets/icons/arrow-left-02.svg}" alt="Voltar">
+					<span>Voltar</span>
+				</div>
+
+				<h1>Formulário Cliente</h1>
+				<p>Preencha seus dados abaixo para se cadastrar no sistema.</p>
+
+				<form class="registration" th:action="@{/user}" method="POST" enctype="multipart/form-data">
+					<input type="hidden" name="OPERATION" value="CREATE">
+					<fieldset class="client-info">
+						<legend>Informações pessoais</legend>
+
+						<div class="input-wrapper">
+							<label for="fullname">Nome completo</label>
+							<input id="fullname" name="fullname" type="text" placeholder="Ex. Matheus Alves">
+						</div>
+
+						<div class="flex">
+							<div class="input-wrapper flex-2">
+								<label for="phone">Telefone</label>
+								<input id="phone" name="phone" type="text" placeholder="(10) 9 8743-1234">
+							</div>
+							<div class="input-wrapper flex-1">
+								<label for="contact-type">Tipo</label>
+								<select id="contact-type" name="contact-type">
+									<option value="residential">Residencial</option>
+									<option value="commercial">Comercial</option>
+									<option value="cellphone">Celular</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="input-wrapper">
+							<label for="cpf">CPF</label>
+							<input id="cpf" name="cpf" type="text" placeholder="Ex. 123.232.234-12">
+						</div>
+
+						<div class="input-wrapper">
+							<label for="birth">Data de nascimento</label>
+							<input id="birth" name="birth" type="date">
+						</div>
+
+						<div class="select-Wrapper">
+							<label for="gender">Gênero</label>
+							<select id="gender" name="gender">
+								<option value="female">Feminino</option>
+								<option value="male">Masculino</option>
+								<option value="na">Prefiro não responder</option>
+							</select>
+						</div>
+					</fieldset>
+
+					<fieldset class="address">
+						<legend>Endereço residencial</legend>
+
+						<div class="flex">
+							<div class="input-wrapper flex-2">
+								<label for="cep">CEP</label>
+								<input id="cep" name="cep" type="text">
+							</div>
+							<div class="input-wrapper flex-1">
+								<label for="residence-type">Tipo residência</label>
+								<select id="residence-type" name="residence-type">
+									<option value="house">Casa</option>
+									<option value="apt">Apartamento</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="flex">
+							<div class="input-wrapper flex-2">
+								<label for="street">Logradouro</label>
+								<input id="street" name="street" type="text" placeholder="Rua das Flores">
+							</div>
+							<div class="input-wrapper flex-1">
+								<label for="number">Número</label>
+								<input id="number" name="number" type="text" placeholder="92 A">
+							</div>
+						</div>
+
+						<div class="input-wrapper">
+							<label for="complement">Complemento</label>
+							<input id="complement" name="complement" type="text"
+								placeholder="Apt 402 / Casa dos fundos">
+						</div>
+
+						<div class="flex">
+							<div class="input-wrapper flex-2">
+								<label for="city">Cidade</label>
+								<input id="city" name="city" type="text" placeholder="São Paulo">
+							</div>
+							<div class="input-wrapper flex-1">
+								<label for="state">Estado</label>
+								<input id="state" name="state" type="text" placeholder="SP">
+							</div>
+						</div>
+
+						<div class="input-wrapper">
+							<label for="address-name">Nome do endereço</label>
+							<input id="address-name" name="address-name" type="text" placeholder="Minha casa">
+						</div>
+
+						<div class="textarea-wrapper">
+							<label for="address-observations">Observações</label>
+							<textarea id="address-observations" name="address-observations" cols="30" rows="5"
+								placeholder="Possui alguma observação?"></textarea>
+						</div>
+					</fieldset>
+
+					<fieldset class="credit-card">
+						<legend>Cartão de crédito</legend>
+
+						<div class="input-wrapper">
+							<label for="cardName">Nome impresso</label>
+							<input id="cardName" name="cardName" type="text">
+						</div>
+
+						<div class="input-wrapper">
+							<label for="cardNumber">Número</label>
+							<input id="cardNumber" name="cardNumber" type="text">
+						</div>
+
+						<div class="flex">
+							<div class="input-wrapper flex-2">
+								<label for="security-code">Código de segurança</label>
+								<input id="security-code" name="security-code" type="text">
+							</div>
+							<div class="input-wrapper flex-1">
+								<label for="card-brand">Bandeira</label>
+								<select name="card-brand" id="card-brand">
+									<option value="visa">Visa</option>
+									<option value="mastercard">Mastercard</option>
+									<option value="elo">Elo</option>
+									<option value="amex">American Express</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+
+					<fieldset class="access-info">
+						<legend>Informações para acesso</legend>
+
+						<div class="input-wrapper">
+							<label for="mail">Email</label>
+							<input id="mail" name="mail" type="email">
+							<div class="error">
+								<img th:src="@{/assets/icons/alert-circle.svg}" alt="ícone de alerta vermelho">
+								<span>Insira um e-mail válido</span>
+							</div>
+						</div>
+
+						<div class="input-wrapper">
+							<label for="password">Senha</label>
+							<input id="password" name="password" type="password">
+							<div class="error">
+								<img th:src="@{/assets/icons/alert-circle.svg}" alt="ícone de alerta vermelho">
+								<span>Insira uma senha válida</span>
+							</div>
+						</div>
+
+						<div class="input-wrapper">
+							<label for="password-confirmation">Confirme a senha</label>
+							<input id="password-confirmation" name="password-confirmation" type="password">
+							<div class="error">
+								<img th:src="@{/assets/icons/alert-circle.svg}" alt="ícone de alerta vermelho">
+								<span>Confirmação inválida</span>
+							</div>
+						</div>
+					</fieldset>
+
+					<div class="actions-wrapper">
+						<button class="btn-primary" type="submit">Registrar</button>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<aside>
+			<div class="aside-container">
+				<header>
+					<img th:src="@{/assets/logo.svg}" alt="Logo">
+					<h2>
+						Por que cada momento de <span>aprendizado</span> importa
+					</h2>
+					<p>Inscreva-se e permita que o mundo do imaginário permeie a sua vida</p>
+				</header>
+				<img th:src="@{/assets/illustration.svg}" alt="Ilustração">
+			</div>
+		</aside>
+	</div>
+</body>
+
+</html>

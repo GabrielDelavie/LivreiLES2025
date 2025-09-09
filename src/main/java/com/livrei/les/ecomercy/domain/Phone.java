@@ -10,29 +10,29 @@ import jakarta.persistence.ManyToOne;
 public class Phone extends EntityDomain{
 
 	private static final long serialVersionUID = 1L;
-	private String name;
+	private String number;
 	private String ddd;
 	private String type;
 	
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "client_id")
     @JsonIgnore
-    private User user;
+    private Client user;
     
 	public Phone() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Phone( String name, String ddd, String type) {
-		this.name = name;
+	public Phone( String number, String ddd, String type) {
+		this.number = number;
 		this.ddd = ddd;
 		this.type = type;
 	}
-	public String getName() {
-		return name;
+	public String getNumber() {
+		return number;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNumber(String name) {
+		this.number = name;
 	}
 	public String getDdd() {
 		return ddd;

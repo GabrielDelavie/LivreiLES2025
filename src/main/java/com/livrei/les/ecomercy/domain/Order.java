@@ -32,7 +32,7 @@ public class Order extends EntityDomain{
 	
 	@ManyToOne
 	@JoinColumn(name = "client_id")
-	private User client;
+	private Client client;
 	
 	@OneToMany(mappedBy = "id.order")
 	private Set<OrderItem> items = new HashSet<>();
@@ -41,7 +41,7 @@ public class Order extends EntityDomain{
 	private Payment payment;
 	public Order() {}
 
-	public Order(Long id,Instant moment, OrderStatus orderStatus,User client) {
+	public Order(Long id,Instant moment, OrderStatus orderStatus,Client client) {
 		super(id);
 		
 		this.moment = moment;
@@ -68,11 +68,11 @@ public class Order extends EntityDomain{
 	}
 	
 
-	public User getClient() {
+	public Client getClient() {
 		return client;
 	}
 
-	public void setClient(User client) {
+	public void setClient(Client client) {
 		this.client = client;
 	}
 	

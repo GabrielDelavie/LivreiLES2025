@@ -13,7 +13,7 @@ import com.livrei.les.ecomercy.domain.Order;
 import com.livrei.les.ecomercy.domain.OrderItem;
 import com.livrei.les.ecomercy.domain.Payment;
 import com.livrei.les.ecomercy.domain.Product;
-import com.livrei.les.ecomercy.domain.User;
+import com.livrei.les.ecomercy.domain.Client;
 import com.livrei.les.ecomercy.domain.enums.OrderStatus;
 import com.livrei.les.ecomercy.repositories.CategoryRepository;
 import com.livrei.les.ecomercy.repositories.OrderItemRepository;

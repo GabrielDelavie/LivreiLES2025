@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <title>Cadastro de Clientes</title>
+
+  <link rel="stylesheet" href="../static/styles/register.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+</head>
+<!-- <header>
+  header
+</header> -->
+
+<body>
+  <div id="app">
+    <main>
+      <div class="main-container">
+        <div class="back">
+          <img src="../static/assets/icons/arrow-left-02.svg" alt="">
+          <span>Voltar</span>
+        </div>
+
+        <h1>Formulario Cliente</h1>
+        <p>Preencha seus dados abaixo para se cadastrar no sistema.</p>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+          <fieldset class="client-info">
+            <legend>Informações pessoais</legend>
+            <div class="input-wrapper">
+              <label for="fullname">Nome completo</label>
+              <input id="fullname" type="text" placeHolder="Ex. Clara Maria da Silva Mendes">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="fullname">Data de nascimento</label>
+              <input id="birth" type="date" lang="pt-BR">
+            </div>
+
+            <div class="select-Wrapper">
+              <label for="gender">Sexo</label>
+              <select name="gender" id="'gender">
+                <option value="female">Feminino</option>
+                <option value="female">Masculino</option>
+                <option value="female">Prefiro não responder</option>
+              </select>
+            </div>
+
+            <div class="textarea-wrapper">
+              <label for="medical-info">Informações médicas</label>
+              <textarea name="medical-info" id="medical-info" cols="30" rows="5"
+                placeholder="possui alguma pipipopopo"></textarea>
+            </div>
+
+            <div class="droparea-wrapper">
+
+              <label for="birth-file">Certidão de Nascimento</label>
+              <div class="dropzone">
+                <input type="file" id="birth-file" name="birth-file">
+                <img src="../static/assets/icons/cloud-upload.svg" alt="">
+                <p>Clique aqui para selecionar os arquivos</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="address">
+            <legend>Endereço residencial</legend>
+
+            <div class="input-wrapper">
+              <label for="cep">CEP</label>
+              <input type="text" id="cep" name="cep">
+            </div>
+
+            <div class="flex">
+              <div class="input-wrapper flex-2">
+                <label for="street">Logradouro</label>
+                <input type="text" id="street" name="street" value="Rua das Flores" disabled>
+              </div>
+
+              <div class="input-wrapper flex-1">
+                <label for="number">Número</label>
+                <input type="text" id="number" name="number" value="92 A" disabled>
+              </div>
+            </div>
+
+
+            <div class="flex">
+              <div class="input-wrapper flex-2">
+                <label for="city">Cidade</label>
+                <input type="text" id="city" name="city" value="São Paulo" disabled>
+              </div>
+
+              <div class="input-wrapper flex-1">
+                <label for="state">Estado</label>
+                <input type="text" id="state" name="state" value="SP" disabled>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="gardian">
+            <legend>informações do responsável</legend>
+
+            <div class="input-wrapper">
+              <label for="gardian">Nome do responsável</label>
+              <input type="text" id="gardian" name="gardian">
+              <small>Principal responsável legal e contato de emergencia</small>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="phone">Telefone</label>
+              <input type="text" id="phone" name="phone" placeholder="(10) 9 8743-1234">
+            </div>
+
+
+            <div class="input-wrapper">
+              <label for="mail">Email</label>
+              <input type="email" id="mail" name="mail" required>
+              <div class="error">
+                <img src="../static/assets/icons/alert-circle.svg" alt="ícone de alerta vermelho">
+                <span>Insira um e-mail válido</span>
+              </div>
+            </div>
+
+          </fieldset>
+          <fieldset class="enrol-options">
+            <legend>Opções de matrícula</legend>
+
+            <div class="input-wrapper">
+              <label>Selecione o turno de estudo</label>
+             
+              <div class="radio-wrapper">
+                <div class="radio-inner">
+                  <div class="radio-image"></div>
+                  <input type="radio" name="study-shift" value="morning" id="morning">
+                  <img src="../static/assets/icons/sun-cloud-02.svg" alt="ícone de sol com nuvem">
+                  <label for="morning">Manhã</label>
+                </div>
+
+                <div class="radio-inner">
+                  <div class="radio-image"></div>
+                  <input type="radio" name="study-shift" value="evening" id="evening">
+                  <img src="../static/assets/icons/sun-02.svg" alt="ícone de sol">
+                  <label for="evening">Tarde</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label>Em qual esporte vocÊ gostaria de inscrever seu filho?</label>
+
+              <div class="radio-wrapper">
+                <div class="radio-inner">
+                  <div class="radio-image">
+                    <input type="radio" name="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+    </main>
+
+    <aside>
+      <div class="aside-container">
+        <header>
+          <img src="../static/assets/logo.svc" alt="">
+          <h2>
+            por que cada momento de
+            <span>
+              aprendizado
+            </span>
+            conta
+
+          </h2>
+          <p>Inscreva-se e permita que o mundo do imaginario permeie a sua vida</p>
+        </header>
+
+        <img src="../static/assets/illustration.svg">
+      </div>
+    </aside>
+  </div>
+
+</body>
+<!-- <footer>
+      footer
+    </footer> -->
+
+</html>

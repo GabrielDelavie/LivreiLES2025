@@ -30,25 +30,27 @@ public class Address extends EntityDomain{
 	private String cep;
 	private String byname;
 	private String observation;
+	private String complement;
 
-    @ElementCollection(targetClass = AddressType.class)
+
+	@ElementCollection(targetClass = AddressType.class)
     @Enumerated(EnumType.STRING)
     @CollectionTable(
     		name = "address_type", 
     		joinColumns = @JoinColumn(name = "address_id")
     		)
-    @Column(name = "tipo")
-    private Set<AddressType> tipos = new HashSet<>();
+    @Column(name = "purpose")
+    private Set<AddressType> porpouses = new HashSet<>();
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "client_id")
     @JsonIgnore
-    private User user;
+    private Client user;
 	
 	public Address() {}
 	
 	public Address(Long id,String residenceType, String name, String type, String number, String neighborhood, String city,
-			String state, String country, String cep, String byname, String observation) {
+			String state, String country, String cep, String byname, String observation,String complement) {
 		
 		super(id);
 		this.residenceType = residenceType;
@@ -62,6 +64,7 @@ public class Address extends EntityDomain{
 		this.cep = cep;
 		this.byname = byname;
 		this.observation = observation;
+		this.complement = complement;
 		
 		
 	}
@@ -130,6 +133,20 @@ public class Address extends EntityDomain{
 	}
 	public void setObservation(String observation) {
 		this.observation = observation;
+	}
+    public String getComplement() {
+		return complement;
+	}
+	public void setComplement(String complement) {
+		this.complement = complement;
+	}
+
+	public Set<AddressType> getTipos() {
+		return porpouses;
+	}
+
+	public void setTipos(Set<AddressType> tipos) {
+		this.porpouses = tipos;
 	}
 	
 	

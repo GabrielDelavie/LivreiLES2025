@@ -1,0 +1,40 @@
+.wrapper{
+    
+    box-sizing:border-box;  
+    display:flex;
+    position:relative;
+    font-family: var(--font-family);
+    & .sidebar{
+        position:fixed;
+        width:200px;
+        height: calc(100vh - 4rem);
+        background:  var(--surface-secondary);
+        padding: 30px 0;
+        & ul li{
+            padding: 15px;
+            border-bottom : 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(225,225,2250,0.05);
+
+            & a{
+                color: #bdb8d7;
+                display:block;
+            }
+            & a .fa-regular{ 
+               width:25px;
+                
+            }
+            &:hover{
+                background:var(--stroke-highlight)
+            }
+            
+            &:hover a{
+                color:#fff;
+            }
+            & li:first{
+                border-top: 1px solid rgba(0,0,0,0.05);
+            }
+        }
+
+    }
+
+}

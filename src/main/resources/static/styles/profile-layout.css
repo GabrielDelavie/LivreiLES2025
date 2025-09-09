@@ -1,0 +1,19 @@
+.wrapper .main-content{
+  width:calc(100vw - 12.5rem);
+  margin-left: 200px;
+  height: calc(100vh - 4rem);
+  background-color: var(--surface-primary);
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.profile{
+  background-color: var(--surface-secondary);
+  max-width: 50rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.user-info{
+  padding:0rem
+}

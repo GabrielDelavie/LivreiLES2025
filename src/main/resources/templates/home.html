@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Funcionário</title>
+</head>
+<body>
+    <h2 th:text="${mensagem}">Mensagem de sucesso</h2>
+
+    <div th:if="${cliente != null}">
+        <p><strong>Nome:</strong> <span th:text="${cliente.fullname}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${cliente.email}"></span></p>
+        <p><strong>CPF:</strong> <span th:text="${cliente.cpf}"></span></p>
+        <!-- Adicione outros campos conforme necessário -->
+    </div>
+
+    <a href="/user">Cadastrar outro</a>
+</body>
+</html>

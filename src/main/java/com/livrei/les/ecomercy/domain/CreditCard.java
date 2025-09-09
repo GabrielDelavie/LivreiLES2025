@@ -17,9 +17,9 @@ public class CreditCard extends EntityDomain{
 	private String expiration;
 	
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "client_id")
     @JsonIgnore
-    private User user;
+    private Client user;
     
 	public CreditCard() {}
 	
@@ -72,11 +72,11 @@ public class CreditCard extends EntityDomain{
 		this.expiration = expiration;
 	}
 
-	public User getUser() {
+	public Client getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Client user) {
 		this.user = user;
 	}
 	

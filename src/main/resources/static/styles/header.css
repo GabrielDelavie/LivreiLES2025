@@ -1,0 +1,7 @@
+.page-header{
+  background-color:#F3541C;
+  height:6rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
